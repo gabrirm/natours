@@ -75,7 +75,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
 // function to use when sending PATCH request via form,
 // instead of handling it client-side as we have done
 exports.updateUserData = catchAsync(async (req, res, next) => {
-  console.log(req.body);
+  
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,
     {

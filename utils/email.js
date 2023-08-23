@@ -43,7 +43,6 @@ module.exports = class Email {
       'email',
       `${template}.pug`
     );
-    console.log(filePath);
     const html = pug.renderFile(filePath, {
       firstName: this.firstName,
       url: this.url,
