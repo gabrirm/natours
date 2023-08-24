@@ -1,7 +1,7 @@
 /* eslint-disable */
 import '@babel/polyfill';
 import { login, logout, signup } from './login';
-
+import { showAlert } from './alerts';
 import { displayMap } from './leaflet';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
@@ -14,6 +14,9 @@ const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
 const signupForm = document.querySelector('.form--signup');
+const alertMessage = document.querySelector('body').dataset.alert
+
+
 
 // VALUES
 
@@ -83,4 +86,8 @@ if (bookBtn) {
     const { tourId } = e.target.dataset;
     bookTour(tourId);
   });
+}
+
+if (alertMessage){
+  showAlert('success', alertMessage)
 }

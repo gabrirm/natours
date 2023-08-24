@@ -5,6 +5,8 @@ const viewController = require('../controllers/viewsController');
 
 const router = express.Router();
 
+router.use(viewController.alerts)
+
 //views routes
 router.get(
   '/',
