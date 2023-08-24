@@ -40,6 +40,12 @@ exports.getTour = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getSignup = catchAsync(async (req, res, next) => {
+  res.status(200).render('signup', {
+    title: 'Create a new account'
+  });
+});
+
 exports.getLogin = catchAsync(async (req, res, next) => {
   res
     .status(200)
@@ -69,13 +75,12 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
   res.status(200).render('overview', {
     title: 'My Tours',
     tours
-  })
+  });
 });
 
 // function to use when sending PATCH request via form,
 // instead of handling it client-side as we have done
 exports.updateUserData = catchAsync(async (req, res, next) => {
-  
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,
     {

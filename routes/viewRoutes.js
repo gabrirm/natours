@@ -16,6 +16,7 @@ router.get('/tour/:slug', authController.isLoggedIn, viewController.getTour);
 router.get('/login', authController.isLoggedIn, viewController.getLogin);
 router.get('/me', authController.protect, viewController.getAccount);
 router.get('/my-tours', authController.protect, viewController.getMyTours);
+router.get('/signup', viewController.getSignup);
 
 // route used to update user data via form PATCH, instead of client side
 // router.post(
