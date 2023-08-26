@@ -5,18 +5,18 @@ import { showAlert } from './alerts';
 import { displayMap } from './leaflet';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
+import { popup } from 'leaflet';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
 const logOutBtn = document.querySelector('.nav__el--logout');
+const popupLogOutBtn = document.querySelector('.popup__item--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
 const signupForm = document.querySelector('.form--signup');
-const alertMessage = document.querySelector('body').dataset.alert
-
-
+const alertMessage = document.querySelector('body').dataset.alert;
 
 // VALUES
 
@@ -88,6 +88,10 @@ if (bookBtn) {
   });
 }
 
-if (alertMessage){
-  showAlert('success', alertMessage)
+if (alertMessage) {
+  showAlert('success', alertMessage);
+}
+
+if (popupLogOutBtn) {
+  popupLogOutBtn.addEventListener('click', logout);
 }

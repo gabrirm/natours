@@ -48,6 +48,7 @@ export const login = async (email, password) => {
 };
 
 export const logout = async () => {
+  console.log('logout');
   try {
     const res = await axios({
       method: 'GET',
